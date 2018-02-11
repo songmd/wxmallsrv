@@ -19,7 +19,8 @@ from django.conf.urls.static import static
 from django.contrib import admin
 
 urlpatterns = [
-                  url(r'^admin/', admin.site.urls),
-                  url(r'^cms/', include('cms.urls')),
-                url(r'^shop2/', include('shop2.urls')),]
-              # ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    url(r'^admin/', admin.site.urls),
+    url(r'^cms/', include('cms.urls')),
+    url(r'^shop2/', include('shop2.urls')),
+    url(r'^wxsrv/', include('wxsrv.urls')), ]
+# ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

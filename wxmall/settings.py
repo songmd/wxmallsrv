@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cms',
     'shop2',
+    'wxsrv',
 ]
 
 MIDDLEWARE = [

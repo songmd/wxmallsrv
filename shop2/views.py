@@ -26,6 +26,7 @@ def user(request, user_id):
     resp['shopdetail'] = [request.build_absolute_uri(shopdetail.detail_img.url) for shopdetail in
                            sw.shopdetail_set.all()]
     resp['goods'] = []
+    resp['show'] = True
     for goods in sw.goodsinfo_set.all():
         goodsinfo = {}
         goodsinfo['desc'] = goods.goods_desc

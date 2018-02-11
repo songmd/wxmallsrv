@@ -18,7 +18,7 @@ class ShopInfo(models.Model):
 
 
 class Banner(models.Model):
-    shop_info = models.ForeignKey(ShopInfo)
+    shop_info = models.ForeignKey(ShopInfo,on_delete=models.CASCADE)
     banner_img = models.ImageField(upload_to='shops')
 
     def __str__(self):
@@ -26,7 +26,7 @@ class Banner(models.Model):
 
 
 class ShopDetail(models.Model):
-    shop_info = models.ForeignKey(ShopInfo)
+    shop_info = models.ForeignKey(ShopInfo,on_delete=models.CASCADE)
     detail_img = models.ImageField(upload_to='shops')
 
     def __str__(self):
@@ -34,7 +34,7 @@ class ShopDetail(models.Model):
 
 
 class Notice(models.Model):
-    shop_info = models.ForeignKey(ShopInfo)
+    shop_info = models.ForeignKey(ShopInfo,on_delete=models.CASCADE)
     notice_content = models.CharField(max_length=240)
 
     def __str__(self):
@@ -42,7 +42,7 @@ class Notice(models.Model):
 
 
 class GoodsInfo(models.Model):
-    shop_info = models.ForeignKey(ShopInfo)
+    shop_info = models.ForeignKey(ShopInfo,on_delete=models.CASCADE)
     goods_desc = models.CharField(max_length=40)
     goods_price = models.FloatField()
     goods_orignal_price = models.FloatField(blank=True, null=True)
@@ -53,7 +53,7 @@ class GoodsInfo(models.Model):
 
 
 class GoodsDetail(models.Model):
-    goods_info = models.ForeignKey(GoodsInfo)
+    goods_info = models.ForeignKey(GoodsInfo,on_delete=models.CASCADE)
     goods_img = models.ImageField(upload_to='shops')
 
     def __str__(self):
@@ -62,7 +62,7 @@ class GoodsDetail(models.Model):
 
 class User2Shop(models.Model):
     user_id = models.CharField(max_length=40)
-    shop_id = models.ForeignKey(ShopInfo)
+    shop_id = models.ForeignKey(ShopInfo,on_delete=models.CASCADE)
 
     def __str__(self):
         return '%s   %s' % (self.user_id, self.shop_id)

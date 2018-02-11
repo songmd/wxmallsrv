@@ -18,7 +18,7 @@ class ShowWindow(models.Model):
 
 
 class GoodsDetail(models.Model):
-    show_window = models.ForeignKey(ShowWindow)
+    show_window = models.ForeignKey(ShowWindow,on_delete=models.CASCADE)
     goods_img = models.ImageField(upload_to='ShowWindow')
 
     def __str__(self):
